@@ -10,9 +10,9 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        if (head == null || head.next == null) return true;
-
-        // Step 1: Find the middle of the linked list
+        if (head == null || head.next == null) {
+           return true;
+        }
         ListNode fast = head;
         ListNode slow = head;
         int count = 0;
@@ -21,8 +21,6 @@ class Solution {
             slow = slow.next;
             count++;
         }
-
-        // Step 2: Reverse the second half of the linked list
         ListNode p = slow;
         ListNode q = null;
         ListNode r = null;
@@ -32,9 +30,7 @@ class Solution {
             p = p.next;
             q.next = r;
         }
-
-        // Step 3: Compare the first half and the reversed second half
-        ListNode left = q; // q now points to the head of the reversed second half
+        ListNode left = q; 
         for (int i = 0; i < count; i++) {
             if (left.val != head.val) {
                 return false;

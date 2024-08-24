@@ -3,14 +3,15 @@ class Solution {
        if(n<=0){
         return false;
        }
+       long pow=0;
         for(long i=0;;i++){
-            long pow=(long)Math.pow(2,i);
-            if(pow==n){
+             pow=(long)Math.pow(2,i);
+            if(n==pow){
                 return true;
             }
-             if(pow>n){
-                return false;
-            }
+            if(pow>n)
+        return false;
+        }
+        
     }
-}
 }
